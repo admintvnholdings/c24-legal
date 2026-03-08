@@ -1,0 +1,14 @@
+[Unit]
+Description=Connect24 Legal Pages (Caddy)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/tvgadmin/c24-legal
+ExecStart=/usr/local/bin/caddy run --config /home/tvgadmin/c24-legal/Caddyfile
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
